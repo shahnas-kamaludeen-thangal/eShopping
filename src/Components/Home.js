@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <div>
-      <h1>I am from home page</h1>
+      <h1>I am from home page-inital push</h1>
     </div>
   );
 };
