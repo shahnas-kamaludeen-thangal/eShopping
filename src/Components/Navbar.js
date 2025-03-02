@@ -30,8 +30,12 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex items-center justify-center space-x-10 py-4 text-sm font-bold">
-        <Link className="hover:underline">Home</Link>
-        <Link className="hover:underline">Shop</Link>
+        <Link to="/" className="hover:underline">
+          Home
+        </Link>
+        <Link to="/shop" className="hover:underline">
+          Shop
+        </Link>
         <Link className="hover:underline">Contact</Link>
         <Link className="hover:underline">About</Link>
       </div>
