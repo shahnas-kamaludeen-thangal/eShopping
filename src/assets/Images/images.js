@@ -2,6 +2,8 @@ export const HERO_IMG =
   "https://showstopper.vip/wp-content/uploads/2023/11/shutterstock_2221109277-1920x1280.jpg";
 export const MEN_IMG =
   "https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2018/06/26/Pictures/_8e6f1136-791b-11e8-8d5f-3f0c905295d2.jpg";
+export const LOGIN_PAGE_IMAG =
+  "https://tse1.mm.bing.net/th?id=OIP.EbxXVfgvZOfs5Rh5XuhcjgHaEW&pid=Api&P=0&h=220";
 
 export const WOMEN_IMG =
   "https://th.bing.com/th/id/OIP.RoiXYhGnNYwsg3ZjJaJIWwHaE8?w=259&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7";
