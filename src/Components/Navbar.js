@@ -1,8 +1,11 @@
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
+  const { logout, user } = useAuth0();
+  console.log(user);
   return (
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-4 md:px-16 lg:px-24 py-4 flex justify-between items-center">
@@ -23,7 +26,13 @@ const Navbar = () => {
           <Link to="/cart">
             <FaShoppingCart className="text-lg" />
           </Link>
-          <button className="hidden md:block">Login | Register</button>
+          <button className="hidden md:block">{user.nickname}</button>
+          <button
+            onClick={() => logout({ returnTo: window.location.origin })}
+            className="hidden md:block"
+          >
+            Logout
+          </button>
           <button className="block md:hidden">
             <FaUser />
           </button>
