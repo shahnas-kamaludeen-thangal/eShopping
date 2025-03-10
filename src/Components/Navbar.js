@@ -2,8 +2,10 @@ import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const cartProducts = useSelector((store) => store.cart.cartItems);
   const { logout, user } = useAuth0();
   console.log(user);
   return (
@@ -24,6 +26,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center space-x-4">
           <Link to="/cart">
+            {cartProducts.length > 0 ? cartProducts.length : ""}
             <FaShoppingCart className="text-lg" />
           </Link>
           <button className="hidden md:block">{user.nickname}</button>
