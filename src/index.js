@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 import Shop from "./Components/Shop";
 import { Auth0Provider, useAuth0 } from "@auth0/auth0-react";
 import Login from "./Components/Login";
+import CheckOut from "./Components/ChekOut";
 
 const MainAPp = () => {
   const { isAuthenticated } = useAuth0();
@@ -23,6 +24,7 @@ const MainAPp = () => {
           <Route path="/" element={<App />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/shop" element={<Shop />}></Route>
+          <Route path="/checkout" element={<CheckOut />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
