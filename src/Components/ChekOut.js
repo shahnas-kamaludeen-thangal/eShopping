@@ -124,7 +124,7 @@ const CheckOut = () => {
                       checked={cashOnDelivery === "COD"}
                       onClick={handleCOD}
                     />
-                    <label className="block text-gray-700">
+                    <label className="block text-gray-700 pl-2">
                       Cash on Delivery
                     </label>
                   </div>
@@ -136,8 +136,49 @@ const CheckOut = () => {
                       checked={debit === "DC"}
                       onClick={handleDebit}
                     />
-                    <label className="block text-gray-700">Debit Card</label>
+                    <label className="block text-gray-700 pl-2">
+                      Debit Card
+                    </label>
                   </div>
+                  {debit === "DC" && (
+                    <div>
+                      <h3 className="border-b-2 mt-5">
+                        Debit Card Information
+                      </h3>
+                      <div className="mt-2 ">
+                        <label>Card holder name:</label>
+                        <input
+                          type="text"
+                          className="border-2 w-[250px] p-2 m-2"
+                          placeholder="Card holder name "
+                        />
+                      </div>
+                      <div>
+                        <label className="ml-8">Card Number:</label>
+                        <input
+                          type="text"
+                          className="border-2 w-[250px] p-2 m-2"
+                          placeholder="Card Number"
+                        />
+                      </div>
+                      <div>
+                        <label className="ml-11">Expiry Date:</label>
+                        <input
+                          type="text"
+                          className="border-2 w-[250px] p-2 m-2"
+                          placeholder="Expiry Date"
+                        />
+                      </div>
+                      <div>
+                        <label className="ml-24">CVV:</label>
+                        <input
+                          type="text"
+                          className="border-2 w-[250px] p-2 m-2"
+                          placeholder="CVV"
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </>
             ) : null}
