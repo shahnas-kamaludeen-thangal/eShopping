@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/eSgopping/static/css/main.f3548372.css",
-    "main.js": "/eSgopping/static/js/main.46e0d911.js",
-    "index.html": "/eSgopping/index.html",
-    "main.f3548372.css.map": "/eSgopping/static/css/main.f3548372.css.map",
-    "main.46e0d911.js.map": "/eSgopping/static/js/main.46e0d911.js.map"
+    "main.css": "/eShopping/static/css/main.f3548372.css",
+    "main.js": "/eShopping/static/js/main.46e0d911.js",
+    "index.html": "/eShopping/index.html",
+    "main.f3548372.css.map": "/eShopping/static/css/main.f3548372.css.map",
+    "main.46e0d911.js.map": "/eShopping/static/js/main.46e0d911.js.map"
   },
   "entrypoints": [
     "static/css/main.f3548372.css",
