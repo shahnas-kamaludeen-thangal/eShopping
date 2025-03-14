@@ -14,36 +14,48 @@ import Login from "./Components/Login";
 import CheckOut from "./Components/ChekOut";
 import OrderPlaced from "./Components/OrderPlaced";
 
-const MainAPp = () => {
-  const { isAuthenticated } = useAuth0();
-  console.log(isAuthenticated);
-  return isAuthenticated ? (
-    <Provider store={appStore}>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<App />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
-          <Route path="/shop" element={<Shop />}></Route>
-          <Route path="/checkout" element={<CheckOut />}></Route>
-          <Route path="/orderPlaced" element={<OrderPlaced />}></Route>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </Provider>
-  ) : (
-    <Login />
-  );
-};
+// const MainAPp = () => {
+//   // const { isAuthenticated } = useAuth0();
+
+//   return (
+//     <Provider store={appStore}>
+//       <BrowserRouter>
+//         <Navbar />
+//         <Routes>
+//           <Route path="/" element={<App />}></Route>
+//           <Route path="/cart" element={<Cart />}></Route>
+//           <Route path="/shop" element={<Shop />}></Route>
+//           <Route path="/checkout" element={<CheckOut />}></Route>
+//           <Route path="/orderPlaced" element={<OrderPlaced />}></Route>
+//         </Routes>
+//         <Footer />
+//       </BrowserRouter>
+//     </Provider>
+//   );
+// };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //
-  <Auth0Provider
-    domain="dev-y102xksbxpwcjj0l.us.auth0.com"
-    clientId="8IAAOCdLkUtzkJUtjO41o949V3KChz6w"
-    redirectUri={window.location.origin}
-  >
-    <MainAPp />
-  </Auth0Provider>
+  // <Auth0Provider
+  //   domain=""
+  //   clientId=""
+  //   redirectUri={window.location.origin}
+  // >
+  //<MainAPp />
+  // </Auth0Provider>
+  <Provider store={appStore}>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/eShopping" element={<App />}></Route>
+        <Route path="/" element={<App />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/shop" element={<Shop />}></Route>
+        <Route path="/checkout" element={<CheckOut />}></Route>
+        <Route path="/orderPlaced" element={<OrderPlaced />}></Route>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  </Provider>
 );
