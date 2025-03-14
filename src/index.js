@@ -12,6 +12,7 @@ import Shop from "./Components/Shop";
 import { Auth0Provider, useAuth0 } from "@auth0/auth0-react";
 import Login from "./Components/Login";
 import CheckOut from "./Components/ChekOut";
+import OrderPlaced from "./Components/OrderPlaced";
 
 const MainAPp = () => {
   const { isAuthenticated } = useAuth0();
@@ -25,6 +26,7 @@ const MainAPp = () => {
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/shop" element={<Shop />}></Route>
           <Route path="/checkout" element={<CheckOut />}></Route>
+          <Route path="/orderPlaced" element={<OrderPlaced />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

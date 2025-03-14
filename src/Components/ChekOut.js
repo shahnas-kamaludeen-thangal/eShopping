@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { cartSlice } from "../utils/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { clearCart } from "../utils/cartSlice";
 
 const CheckOut = () => {
   const [showBillingAccordian, setShowBillingAccordian] = useState(false);
@@ -26,6 +30,14 @@ const CheckOut = () => {
   const handleCOD = () => {
     setCashOnDelivery("COD");
     setDebit("");
+  };
+
+  const cart = useSelector((store) => store.cart.cartItems);
+  const totalPrice = useSelector((store) => store.cart.totalPrice);
+
+  const dispatch = useDispatch();
+  const handleOrder = () => {
+    dispatch(clearCart());
   };
   return (
     <div className="container mx-auto py-8 min-h-96 px-4 md:px-16 lg:px-24">
@@ -188,6 +200,51 @@ const CheckOut = () => {
 
       <div className="md:w-1/3 bg-white p-6 rounded-lg shadow-md border">
         <h3 className="text-2xl font-semibold mb-2 border-b">Order Summary</h3>
+        <div>
+          <div>
+            {cart?.map((item) => {
+              return (
+                <>
+                  <div className="flex border-b-2">
+                    <div>
+                      <img
+                        src={item.image}
+                        className="w-16 h-16 object-contain rounded"
+                      />
+                    </div>
+                    <div className="m-3 ">
+                      <h4 className="text-lg font-semibold">{item.name}</h4>
+                    </div>
+                    <div className="m-3">
+                      <h3 className="text-lg font-semibold">{item.quantity}</h3>
+                    </div>
+                    <div className="m-3">
+                      <h3 className="text-lg font-semibold">
+                        ${""}
+                        {item.price * item.quantity}
+                      </h3>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
+          </div>
+
+          <div className="flex  justify-end mr-2">
+            <h2 className="text-lg font-semibold ml-2">Total Price:</h2>
+            <h2 className="text-lg font-semibold ml-1">$ {totalPrice}</h2>
+          </div>
+          <div className="mt-5">
+            <Link to={"/orderPlaced"}>
+              <button
+                className="w-full bg-red-600 text-white py-2 hover:bg-red-800"
+                onClick={handleOrder}
+              >
+                Place order
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
