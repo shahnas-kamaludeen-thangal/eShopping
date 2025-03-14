@@ -60,9 +60,20 @@ const cartClice = createSlice({
         }
       }
     },
+
+    clearCart: (state) => {
+      state.cartItems = [];
+      state.productQuantity = 0;
+      state.totalPrice = 0;
+    },
   },
 });
 
-export const { addItemtoCart, removeItem, increaseItem, decreaseItem } =
-  cartClice.actions;
+export const {
+  addItemtoCart,
+  removeItem,
+  increaseItem,
+  decreaseItem,
+  clearCart,
+} = cartClice.actions;
 export default cartClice.reducer;
