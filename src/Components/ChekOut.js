@@ -221,7 +221,7 @@ const CheckOut = () => {
                     <div className="m-3">
                       <h3 className="text-lg font-semibold">
                         ${""}
-                        {item.price * item.quantity}
+                        {(item.price * item.quantity).toFixed(2)}
                       </h3>
                     </div>
                   </div>
